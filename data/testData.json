@@ -1,0 +1,47 @@
+{
+  "negativeLoginScenarios": [
+    {
+      "name": "invalid username",
+      "username": "invalid_user",
+      "password": "secret_sauce",
+      "expectedError": "Epic sadface: Username and password do not match any user in this service"
+    },
+    {
+      "name": "invalid password",
+      "username": "standard_user",
+      "password": "wrong_password",
+      "expectedError": "Epic sadface: Username and password do not match any user in this service"
+    },
+    {
+      "name": "invalid username and password",
+      "username": "invalid_user",
+      "password": "wrong_password",
+      "expectedError": "Epic sadface: Username and password do not match any user in this service"
+    },
+    {
+      "name": "empty username",
+      "username": "",
+      "password": "secret_sauce",
+      "expectedError": "Epic sadface: Username is required"
+    },
+    {
+      "name": "empty password",
+      "username": "standard_user",
+      "password": "",
+      "expectedError": "Epic sadface: Password is required"
+    },
+    {
+      "name": "empty username and password",
+      "username": "",
+      "password": "",
+      "expectedError": "Epic sadface: Username is required"
+    },
+    {
+        "name": "locked username and password",
+        "username": "locked_out_user",
+        "password": "secret_sauce",
+        "expectedError":
+            "Epic sadface: Sorry, this user has been locked out."
+    }
+  ]
+}
